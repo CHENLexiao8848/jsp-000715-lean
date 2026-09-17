@@ -1,0 +1,15 @@
+{
+  "checkedAt": "2026-09-17T22:22:53.4101702+08:00",
+  "canonicalTheorem": "JSP715.jsp000715",
+  "goal": "Complete canonical JSP-000715 conditional comparison using independent local B/C proofs",
+  "replayedModules": 16,
+  "directAxiomChecks": 51,
+  "verifiedFileHashes": 23,
+  "currentHashDrift": 0,
+  "failedChecks": 0,
+  "deliveryFiles": 42,
+  "missingDeliveryFiles": 0,
+  "repositoryWideTextScan": true,
+  "upstreamProblemProofDependency": false,
+  "recovery": "Original runner disappeared after 14 verified proof-module replays. Current proof hashes matched their previous evidence; recovery rechecked lake build, replayed both audit modules and completed all scans/environment/hash checks."
+}

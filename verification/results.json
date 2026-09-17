@@ -1,0 +1,153 @@
+[
+  {
+    "name": "lake-build",
+    "command": "lake build",
+    "exitCode": 0,
+    "log": "verification/lake-build.log"
+  },
+  {
+    "name": "audit-module-build",
+    "command": "lake build JSP715.CRTAudit JSP715.DifferenceAudit",
+    "exitCode": 0,
+    "log": "verification/audit-module-build.log"
+  },
+  {
+    "name": "axioms-signatures",
+    "command": "lake env lean -j1 Audit.lean",
+    "exitCode": 0,
+    "log": "verification/axioms-signatures.log"
+  },
+  {
+    "name": "axiom-allowlist",
+    "exitCode": 0,
+    "declarations": 51,
+    "allowed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "name": "kernel-JSP715.CRTBase",
+    "command": "lake env leanchecker --verbose JSP715.CRTBase",
+    "exitCode": 0,
+    "log": "verification/kernel-JSP715.CRTBase.log"
+  },
+  {
+    "name": "kernel-JSP715.CRTPattern",
+    "command": "lake env leanchecker --verbose JSP715.CRTPattern",
+    "exitCode": 0,
+    "log": "verification/kernel-JSP715.CRTPattern.log"
+  },
+  {
+    "name": "kernel-JSP715.CRTConstruction",
+    "command": "lake env leanchecker --verbose JSP715.CRTConstruction",
+    "exitCode": 0,
+    "log": "verification/kernel-JSP715.CRTConstruction.log"
+  },
+  {
+    "name": "kernel-JSP715.CRTCoefficient",
+    "command": "lake env leanchecker --verbose JSP715.CRTCoefficient",
+    "exitCode": 0,
+    "log": "verification/kernel-JSP715.CRTCoefficient.log"
+  },
+  {
+    "name": "kernel-JSP715.CRTAsymptotic",
+    "command": "lake env leanchecker --verbose JSP715.CRTAsymptotic",
+    "exitCode": 0,
+    "log": "verification/kernel-JSP715.CRTAsymptotic.log"
+  },
+  {
+    "name": "kernel-JSP715.CRTConvention",
+    "command": "lake env leanchecker --verbose JSP715.CRTConvention",
+    "exitCode": 0,
+    "log": "verification/kernel-JSP715.CRTConvention.log"
+  },
+  {
+    "name": "kernel-JSP715.CRTInterface",
+    "command": "lake env leanchecker --verbose JSP715.CRTInterface",
+    "exitCode": 0,
+    "log": "verification/kernel-JSP715.CRTInterface.log"
+  },
+  {
+    "name": "kernel-JSP715.DifferenceUpper",
+    "command": "lake env leanchecker --verbose JSP715.DifferenceUpper",
+    "exitCode": 0,
+    "log": "verification/kernel-JSP715.DifferenceUpper.log"
+  },
+  {
+    "name": "kernel-JSP715.DifferenceBridge",
+    "command": "lake env leanchecker --verbose JSP715.DifferenceBridge",
+    "exitCode": 0,
+    "log": "verification/kernel-JSP715.DifferenceBridge.log"
+  },
+  {
+    "name": "kernel-JSP715.Basic",
+    "command": "lake env leanchecker --verbose JSP715.Basic",
+    "exitCode": 0,
+    "log": "verification/kernel-JSP715.Basic.log"
+  },
+  {
+    "name": "kernel-JSP715.Comparison",
+    "command": "lake env leanchecker --verbose JSP715.Comparison",
+    "exitCode": 0,
+    "log": "verification/kernel-JSP715.Comparison.log"
+  },
+  {
+    "name": "kernel-JSP715.Asymptotic",
+    "command": "lake env leanchecker --verbose JSP715.Asymptotic",
+    "exitCode": 0,
+    "log": "verification/kernel-JSP715.Asymptotic.log"
+  },
+  {
+    "name": "kernel-JSP715.SumAsymptotic",
+    "command": "lake env leanchecker --verbose JSP715.SumAsymptotic",
+    "exitCode": 0,
+    "log": "verification/kernel-JSP715.SumAsymptotic.log"
+  },
+  {
+    "name": "kernel-JSP715.Main",
+    "command": "lake env leanchecker --verbose JSP715.Main",
+    "exitCode": 0,
+    "log": "verification/kernel-JSP715.Main.log"
+  },
+  {
+    "name": "interrupted-run-recovery",
+    "exitCode": 0,
+    "meaning": "Original runner and child handles absent. Retained 14 successful proof replays verified against pre-final source hashes; audit-only comment edit is separately rebuilt and replayed below."
+  },
+  {
+    "name": "lake-build-recovery",
+    "command": "lake build",
+    "exitCode": 0,
+    "log": "verification/lake-build-recovery.log"
+  },
+  {
+    "name": "kernel-JSP715.CRTAudit",
+    "command": "lake env leanchecker --verbose JSP715.CRTAudit",
+    "exitCode": 0,
+    "log": "verification/kernel-JSP715.CRTAudit.log"
+  },
+  {
+    "name": "kernel-JSP715.DifferenceAudit",
+    "command": "lake env leanchecker --verbose JSP715.DifferenceAudit",
+    "exitCode": 0,
+    "log": "verification/kernel-JSP715.DifferenceAudit.log"
+  },
+  {
+    "name": "proof-token-scan",
+    "exitCode": 0,
+    "rgExitCode": 1,
+    "meaning": "No matches in the full local proof closure"
+  },
+  {
+    "name": "pinned-environment",
+    "exitCode": 0,
+    "meaning": "Lean 4.34.0 and clean pinned Mathlib verified"
+  },
+  {
+    "name": "source-stability",
+    "exitCode": 0,
+    "meaning": "All proof and build files unchanged throughout verification"
+  }
+]

@@ -1,0 +1,76 @@
+JSP715.jsp000715 {r : Γäò} (hr : 2 Γëñ r) {cSum cDiff : Γä¥} (hsum : JSP715.HasSqrtAsymptotic (JSP715.sumExtremal r) cSum)
+  (hdiff : JSP715.HasSqrtAsymptotic (JSP715.diffExtremal r) cDiff) : cDiff < cSum
+JSP715.jsp000715_bounds {r : Γäò} (hr : 2 Γëñ r) {cSum cDiff : Γä¥}
+  (hsum : JSP715.HasSqrtAsymptotic (JSP715.sumExtremal r) cSum)
+  (hdiff : JSP715.HasSqrtAsymptotic (JSP715.diffExtremal r) cDiff) :
+  cDiff Γëñ ΓêÜΓåær Γêº ΓêÜΓåær < JSP715.crtConstant r Γêº JSP715.crtConstant r Γëñ cSum
+JSP715.jsp000715_constants_ne {r : Γäò} (hr : 2 Γëñ r) {cSum cDiff : Γä¥}
+  (hsum : JSP715.HasSqrtAsymptotic (JSP715.sumExtremal r) cSum)
+  (hdiff : JSP715.HasSqrtAsymptotic (JSP715.diffExtremal r) cDiff) : cSum Γëá cDiff
+JSP715.jsp000715_unbounded_strict {r : Γäò} (hr : 2 Γëñ r) (NΓéÇ : Γäò) :
+  Γêâ N ΓëÑ NΓéÇ, JSP715.diffExtremal r N < JSP715.sumExtremal r N
+JSP715.difference_finite_upper {N m r : Γäò} (hm : 0 < m) (A : Finset Γäò) (hDiff : JSP715.IsDiffB2 r A)
+  (hA : A Γèå Finset.Icc 1 N) : ΓåæA.card ^ 2 Γëñ (ΓåæN + Γåæm) * (ΓåæA.card / Γåæm + Γåær)
+JSP715.sum_finite_lower {r p : Γäò} (hr : 1 Γëñ r) (hp : Nat.Prime p) :
+  (p - 1) * (r + r / 2) Γëñ JSP715.sumExtremal r (p * (p - 1) * (r + 2 * (r / 2)))
+JSP715.diff_upper_epsilon (r : Γäò) {╬╡ : Γä¥} (h╬╡ : 0 < ╬╡) : Γêâ NΓéÇ, ΓêÇ N ΓëÑ NΓéÇ, Γåæ(JSP715.diffExtremal r N) / ΓêÜΓåæN < ΓêÜΓåær + ╬╡
+JSP715.diff_limsup_upper (r : Γäò) : Filter.limsup (fun N => Γåæ(JSP715.diffExtremal r N) / ΓêÜΓåæN) Filter.atTop Γëñ ΓêÜΓåær
+JSP715.sum_lower_epsilon {r : Γäò} (hr : 2 Γëñ r) {╬╡ : Γä¥} (h╬╡ : 0 < ╬╡) (NΓéÇ : Γäò) :
+  Γêâ N ΓëÑ NΓéÇ, JSP715.crtConstant r - ╬╡ < Γåæ(JSP715.sumExtremal r N) / ΓêÜΓåæN
+def JSP715.HasSqrtAsymptotic : (Γäò ΓåÆ Γäò) ΓåÆ Γä¥ ΓåÆ Prop :=
+fun f c => Filter.Tendsto (fun N => Γåæ(f N) / ΓêÜΓåæN) Filter.atTop (nhds c)
+def JSP715.diffExtremal : Γäò ΓåÆ Γäò ΓåÆ Γäò :=
+fun r N => (Finset.filter (JSP715.IsDiffB2 r) (Finset.Icc 1 N).powerset).sup Finset.card
+def JSP715.CRT.sumExtremal : Γäò ΓåÆ Γäò ΓåÆ Γäò :=
+fun r N => (Finset.filter (JSP715.CRT.IsSumB2 r) (Finset.Icc 1 N).powerset).sup Finset.card
+'JSP715.jsp000715' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JSP715.jsp000715_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JSP715.jsp000715_constants_ne' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JSP715.jsp000715_unbounded_strict' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JSP715.difference_finite_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JSP715.sum_finite_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JSP715.difference_constant_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JSP715.sum_constant_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JSP715.sqrt_lt_crtConstant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JSP715.diff_upper_eventually' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JSP715.diff_upper_epsilon' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JSP715.diff_limsup_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JSP715.sum_lower_epsilon' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JSP715.mem_sumReps' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JSP715.diagonal_mem_sumReps' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JSP715.positive_nat_sub_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JSP715.diffReps_eq_integerDiffReps' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JSP715.mem_diffReps_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JSP715.isDiffB2_iff_integer' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JSP715.exists_sumExtremal_set' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JSP715.exists_diffExtremal_set' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JSP715.card_le_sumExtremal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JSP715.card_le_diffExtremal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JSP715.sumExtremal_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JSP715.diffExtremal_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JSP715.CRT.exists_base' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JSP715.CRT.layer_ordered' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JSP715.CRT.paste_isSumB2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JSP715.CRT.finite_construction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JSP715.CRT.construction_epsilon_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JSP715.CRT.coefficient_eq_floor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JSP715.CRT.isSumB2_iff_crt02' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JSP715.DifferenceBridge.isDiffB2_intImage_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JSP715.DifferenceBridge.nat_diff_card_sq_mul_le_sharp' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JSP715.DifferenceBridge.nat_diff_upper_eventually' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JSP715.Difference.diff_card_upper_eventually' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JSP715.CRT.layer_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JSP715.CRT.layer_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JSP715.CRT.construction_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JSP715.CRT.construction_subset' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JSP715.CRT.construction_isSumB2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JSP715.CRT.ratio_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JSP715.CRT.ratio_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JSP715.CRT.construction_epsilon' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JSP715.CRT.conditional_constant_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JSP715.CRT.constant_lower_of_dominates' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JSP715.Difference.mem_diffReps_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JSP715.Difference.nat_difference_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JSP715.Difference.diff_card_sq_mul_le_sharp' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JSP715.Difference.diff_card_sq_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JSP715.CRTConvention.interval_convention' depends on axioms: [propext, Classical.choice, Quot.sound]

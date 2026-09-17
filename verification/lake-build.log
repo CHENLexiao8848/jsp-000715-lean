@@ -1,0 +1,9 @@
+Γä╣ [3081/3116] Replayed JSP715.CRTConvention
+info: JSP715/CRTConvention.lean:118:0: 'JSP715.CRTConvention.interval_convention' depends on axioms: [propext, Classical.choice, Quot.sound]
+Γä╣ [3102/3116] Replayed JSP715.CRTBase
+info: JSP715/CRTBase.lean:112:0: 'JSP715.CRT.exists_base' depends on axioms: [propext, Classical.choice, Quot.sound]
+ΓÜá [3107/3116] Replayed JSP715.CRTConstruction
+warning: JSP715/CRTConstruction.lean:60:32: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Build completed successfully (3116 jobs).

@@ -1,0 +1,77 @@
+Γä╣ [3096/3110] Replayed JSP715.CRTConvention
+info: JSP715/CRTConvention.lean:118:0: 'JSP715.CRTConvention.interval_convention' depends on axioms: [propext, Classical.choice, Quot.sound]
+Γä╣ [3102/3110] Replayed JSP715.CRTBase
+info: JSP715/CRTBase.lean:112:0: 'JSP715.CRT.exists_base' depends on axioms: [propext, Classical.choice, Quot.sound]
+ΓÜá [3104/3110] Replayed JSP715.CRTConstruction
+warning: JSP715/CRTConstruction.lean:60:32: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Γä╣ [3108/3110] Replayed JSP715.CRTAudit
+info: JSP715/CRTAudit.lean:3:0: def JSP715.CRT.IsSumB2 : Γäò ΓåÆ Finset Γäò ΓåÆ Prop :=
+fun r A => ΓêÇ (n : Γäò), (JSP715.CRT.sumReps A n).card Γëñ r
+info: JSP715/CRTAudit.lean:4:0: JSP715.CRT.exists_base (p : Γäò) (hp : Nat.Prime p) :
+  Γêâ C Γèå Finset.range (p * (p - 1)), C.card = p - 1 Γêº JSP715.CRT.ModularSidon (p * (p - 1)) C
+info: JSP715/CRTAudit.lean:5:0: JSP715.CRT.layer_ordered {r : Γäò} (hr : 1 Γëñ r) (n : Γäò) : (JSP715.CRT.orderedReps (JSP715.CRT.layer r) n).card Γëñ r
+info: JSP715/CRTAudit.lean:6:0: JSP715.CRT.paste_isSumB2 {m r : Γäò} (hm : 0 < m) {C I : Finset Γäò} (hC : C Γèå Finset.range m)
+  (hs : JSP715.CRT.ModularSidon m C) (hI : ΓêÇ (n : Γäò), {z Γêê I ├ù╦ó I | z.1 + z.2 = n}.card Γëñ r) :
+  JSP715.CRT.IsSumB2 r (JSP715.CRT.paste m C I)
+info: JSP715/CRTAudit.lean:7:0: JSP715.CRT.construction_card {m r : Γäò} (hm : 0 < m) (hr : 1 Γëñ r) {C : Finset Γäò} (hC : C Γèå Finset.range m) :
+  (JSP715.CRT.construction m C r).card = C.card * (r + r / 2)
+info: JSP715/CRTAudit.lean:8:0: JSP715.CRT.construction_subset {m r : Γäò} (hr : 1 Γëñ r) {C : Finset Γäò} (hC : C Γèå Finset.range m) :
+  JSP715.CRT.construction m C r Γèå Finset.Icc 1 (m * (r + 2 * (r / 2)))
+info: JSP715/CRTAudit.lean:9:0: JSP715.CRT.finite_construction {r p : Γäò} (hr : 1 Γëñ r) (hp : Nat.Prime p) :
+  Γêâ A Γèå Finset.Icc 1 (p * (p - 1) * (r + 2 * (r / 2))), JSP715.CRT.IsSumB2 r A Γêº A.card = (p - 1) * (r + r / 2)
+info: JSP715/CRTAudit.lean:10:0: JSP715.CRT.construction_epsilon {r : Γäò} (hr : 2 Γëñ r) {╬╡ : Γä¥} (h╬╡ : 0 < ╬╡) (NΓéÇ : Γäò) :
+  Γêâ N, NΓéÇ Γëñ N Γêº 0 < N Γêº Γêâ A Γèå Finset.Icc 1 N, JSP715.CRT.IsSumB2 r A Γêº JSP715.CRT.coefficient r - ╬╡ < ΓåæA.card / ΓêÜΓåæN
+info: JSP715/CRTAudit.lean:11:0: JSP715.CRT.construction_epsilon_card {r : Γäò} (hr : 2 Γëñ r) {╬╡ : Γä¥} (h╬╡ : 0 < ╬╡) (NΓéÇ : Γäò) :
+  Γêâ N ΓëÑ NΓéÇ, Γêâ A Γèå Finset.Icc 1 N, JSP715.CRT.IsSumB2 r A Γêº (JSP715.CRT.coefficient r - ╬╡) * ΓêÜΓåæN < ΓåæA.card
+info: JSP715/CRTAudit.lean:12:0: JSP715.CRT.conditional_constant_lower {r : Γäò} (hr : 2 Γëñ r) {c : Γä¥}
+  (hc : Filter.Tendsto (fun N => Γåæ(JSP715.CRT.sumExtremal r N) / ΓêÜΓåæN) Filter.atTop (nhds c)) :
+  JSP715.CRT.coefficient r Γëñ c
+info: JSP715/CRTAudit.lean:13:0: JSP715.CRT.constant_lower_of_dominates {r : Γäò} (hr : 2 Γëñ r) {f : Γäò ΓåÆ Γä¥} {c : Γä¥}
+  (hdom : ΓêÇ (N : Γäò), ΓêÇ A Γèå Finset.Icc 1 N, JSP715.CRT.IsSumB2 r A ΓåÆ ΓåæA.card Γëñ f N)
+  (hc : Filter.Tendsto (fun N => f N / ΓêÜΓåæN) Filter.atTop (nhds c)) : JSP715.CRT.coefficient r Γëñ c
+info: JSP715/CRTAudit.lean:14:0: JSP715.CRT.isSumB2_iff_crt02 {r N : Γäò} {A : Finset Γäò} (hA : A Γèå Finset.Icc 1 N) :
+  JSP715.CRT.IsSumB2 r A Γåö ΓêÇ (s : Γäñ), 0 < s ΓåÆ (JSP715.CRTConvention.integerSumReps A s).card Γëñ r
+info: JSP715/CRTAudit.lean:15:0: JSP715.CRT.coefficient_eq_floor (r : Γäò) : JSP715.CRT.coefficient r = (Γåær + ΓåæΓîèΓåær / 2ΓîïΓéè) / ΓêÜ(Γåær + 2 * ΓåæΓîèΓåær / 2ΓîïΓéè)
+info: JSP715/CRTAudit.lean:16:0: 'JSP715.CRT.exists_base' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: JSP715/CRTAudit.lean:17:0: 'JSP715.CRT.layer_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: JSP715/CRTAudit.lean:18:0: 'JSP715.CRT.layer_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: JSP715/CRTAudit.lean:19:0: 'JSP715.CRT.layer_ordered' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: JSP715/CRTAudit.lean:20:0: 'JSP715.CRT.paste_isSumB2' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: JSP715/CRTAudit.lean:21:0: 'JSP715.CRT.construction_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: JSP715/CRTAudit.lean:22:0: 'JSP715.CRT.construction_subset' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: JSP715/CRTAudit.lean:23:0: 'JSP715.CRT.construction_isSumB2' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: JSP715/CRTAudit.lean:24:0: 'JSP715.CRT.finite_construction' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: JSP715/CRTAudit.lean:25:0: 'JSP715.CRT.ratio_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: JSP715/CRTAudit.lean:26:0: 'JSP715.CRT.ratio_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: JSP715/CRTAudit.lean:27:0: 'JSP715.CRT.construction_epsilon' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: JSP715/CRTAudit.lean:28:0: 'JSP715.CRT.construction_epsilon_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: JSP715/CRTAudit.lean:29:0: 'JSP715.CRT.conditional_constant_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: JSP715/CRTAudit.lean:30:0: 'JSP715.CRT.constant_lower_of_dominates' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: JSP715/CRTAudit.lean:31:0: 'JSP715.CRT.isSumB2_iff_crt02' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: JSP715/CRTAudit.lean:32:0: 'JSP715.CRT.coefficient_eq_floor' depends on axioms: [propext, Classical.choice, Quot.sound]
+Γä╣ [3110/3110] Built JSP715.DifferenceAudit (107s)
+info: JSP715/DifferenceAudit.lean:5:0: JSP715.Difference.diffReps (A : Finset Γäñ) (d : Γäñ) : Finset (Γäñ ├ù Γäñ)
+info: JSP715/DifferenceAudit.lean:6:0: JSP715.Difference.IsDiffB2 (r : Γäò) (A : Finset Γäñ) : Prop
+info: JSP715/DifferenceAudit.lean:7:0: JSP715.Difference.mem_diffReps_pos {A : Finset Γäñ} {d a b : Γäñ} (hd : 0 < d) :
+  (a, b) Γêê JSP715.Difference.diffReps A d Γåö a Γêê A Γêº b Γêê A Γêº b < a Γêº a - b = d
+info: JSP715/DifferenceAudit.lean:8:0: JSP715.Difference.isDiffB2_iff_nonzero {r : Γäò} {A : Finset Γäñ} :
+  JSP715.Difference.IsDiffB2 r A Γåö ΓêÇ (d : Γäñ), d Γëá 0 ΓåÆ (JSP715.Difference.diffReps A d).card Γëñ r
+info: JSP715/DifferenceAudit.lean:9:0: JSP715.Difference.nat_difference_iff {a b d : Γäò} (hd : 0 < d) : Γåæa - Γåæb = Γåæd Γåö b < a Γêº a - b = d
+info: JSP715/DifferenceAudit.lean:10:0: JSP715.Difference.energy_le_sharp {r : Γäò} {A : Finset Γäñ} (h : JSP715.Difference.IsDiffB2 r A) (T : Finset Γäñ) :
+  A.addEnergy T Γëñ A.card * T.card + r * T.card * (T.card - 1)
+info: JSP715/DifferenceAudit.lean:11:0: JSP715.Difference.diff_card_sq_mul_le_sharp {r N L : Γäò} {A : Finset Γäñ} (hA : A Γèå Finset.Icc 1 ΓåæN)
+  (h : JSP715.Difference.IsDiffB2 r A) : A.card ^ 2 * L ^ 2 Γëñ (N + L - 1) * (A.card * L + r * L * (L - 1))
+info: JSP715/DifferenceAudit.lean:12:0: JSP715.Difference.diff_card_sq_mul_le {r N L : Γäò} {A : Finset Γäñ} (hA : A Γèå Finset.Icc 1 ΓåæN)
+  (h : JSP715.Difference.IsDiffB2 r A) : A.card ^ 2 * L ^ 2 Γëñ (N + L) * (A.card * L + r * L ^ 2)
+info: JSP715/DifferenceAudit.lean:13:0: JSP715.Difference.diff_card_sq_le {r N L : Γäò} {A : Finset Γäñ} (hL : 0 < L) (hA : A Γèå Finset.Icc 1 ΓåæN)
+  (h : JSP715.Difference.IsDiffB2 r A) : ΓåæA.card ^ 2 Γëñ (ΓåæN + ΓåæL) * (ΓåæA.card / ΓåæL + Γåær)
+info: JSP715/DifferenceAudit.lean:14:0: JSP715.Difference.diff_card_upper_eventually (r : Γäò) {╬╡ : Γä¥} (h╬╡ : 0 < ╬╡) :
+  Γêâ NΓéÇ, ΓêÇ N ΓëÑ NΓéÇ, ΓêÇ A Γèå Finset.Icc 1 ΓåæN, JSP715.Difference.IsDiffB2 r A ΓåÆ ΓåæA.card Γëñ (ΓêÜΓåær + ╬╡) * ΓêÜΓåæN
+info: JSP715/DifferenceAudit.lean:16:0: 'JSP715.Difference.mem_diffReps_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: JSP715/DifferenceAudit.lean:17:0: 'JSP715.Difference.nat_difference_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: JSP715/DifferenceAudit.lean:18:0: 'JSP715.Difference.diff_card_sq_mul_le_sharp' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: JSP715/DifferenceAudit.lean:19:0: 'JSP715.Difference.diff_card_sq_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: JSP715/DifferenceAudit.lean:20:0: 'JSP715.Difference.diff_card_upper_eventually' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (3110 jobs).

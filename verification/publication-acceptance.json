@@ -1,0 +1,26 @@
+{
+  "auditedAt": "2026-09-17T22:31:51.624646+08:00",
+  "kind": "read-only release audit; no fresh Lean build",
+  "theorem": "JSP715.jsp000715",
+  "theoremFile": "JSP715/Main.lean",
+  "theoremLine": 40,
+  "verifiedHashes": 23,
+  "hashDrift": 0,
+  "kernelReplayModules": 16,
+  "axiomDeclarations": 51,
+  "axiomAllowlist": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "failingRecordedChecks": 0,
+  "manifestDependencies": 9,
+  "dependencyHeadsMatch": true,
+  "dependenciesClean": true,
+  "canonicalStatementRechecked": "https://www.erdosproblems.com/863",
+  "scope": "The source explicitly assumes both normalized extremal asymptotics; all r >= 2, unordered sums with diagonals once, positive differences only, actual maxima on [1,N]. Existing theorem exactly answers both constant comparison questions.",
+  "activeImports": "Local JSP715 plus pinned Mathlib; no external/plby or verified-replay import",
+  "sourceEscapeScan": "No sorry/admit/axiom/unsafe/native_decide/ofReduceBool/trustCompiler/implemented_by in active source",
+  "provenance": "Earlier public plby/lean-proofs SHA 8822f7ddef30fadbd92e1c6ab4ed897af356af5e acknowledged as route evidence and priority; no blanket redistribution license asserted. No matching contiguous block of >= 6 nonempty trimmed source lines found between active local files and cached third-party proof; this is corroboration, not a legal conclusion.",
+  "releaseAcceptance": "English documentation and attribution supplied; minimal proof package excludes historical sources and private data; all 23 verified proof/build files remain byte-identical."
+}
