@@ -2,7 +2,7 @@
 
 Selected proof: `d202e2c1b904389c6d21f74ab856e3099b0b8391` in `CHENLexiao8848/jsp-000715-lean`, branch `codex/jsp-000715-proof`.
 
-A new isolated checkout was built on Darwin arm64 using Lean 4.34.0 and the nine exact dependency revisions below. Before the project build, the project's `.lake/build` directory was absent and no local project `.olean` existed. Dependency artifacts were obtained by the official Mathlib content-addressed cache tool at the pinned source revision. `lake --no-cache build` succeeded, followed by a separate three-target Lean audit. The full build log below identifies every local project module as `Built`.
+A new isolated checkout was built on Darwin arm64 using Lean 4.34.0 and the nine exact dependency revisions below. Before the project build, the project's `.lake/build` directory was absent and no local project `.olean` existed. Dependency artifacts were obtained by the official Mathlib content-addressed cache tool at the pinned source revision. `lake --no-cache build` succeeded, followed by a separate three-target Lean audit. The full build log below identifies every local module required by the default target as `Built`.
 
 This is a fresh compilation of the submitted project using pinned dependency caches, not a build of all Mathlib from source. No new full 51-declaration audit, all-module replay, independent human review, maintainer acceptance or award eligibility is asserted. The one nonfatal linter warning is retained in the unedited build log. Source and lock hashes before/after are identical; tracked Git state was clean and all 23 release-manifest entries matched.
 
